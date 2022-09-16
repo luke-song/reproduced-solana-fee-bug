@@ -4,7 +4,7 @@
     "description": "",
     "main": "reproduce.test.js",
     "scripts": {
-      "test": "jest"
+      "test": "node test.js"
     },
     "keywords": [],
     "author": "",

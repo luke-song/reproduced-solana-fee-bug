@@ -1,7 +1,7 @@
 const solanaWeb3 = require('@solana/web3.js');
 
 (async () => {
-    const connection = new solanaWeb3.Connection('https://api.testnet.solana.com');
+    const connection = new solanaWeb3.Connection('http://localhost:8899', 'confirmed');
 
 
 const from = solanaWeb3.Keypair.generate();
@@ -32,17 +32,4 @@ console.log('SIGNATURE', signature);
 let balance2 = await connection.getBalance(from.publicKey);
 console.log('After Balance: ', balance2);
 
-
-
 })();
-
-// describe("reproduced bug", () => {
-//     it('should be able to execute 60 transfer instructions without cryptid', async () => {
-//       await sendTransaction(connection, tx, [key]);
-//       await balances.recordAfter();
-//       expect(balances.for(key.publicKey)).to.equal(
-//         -(lamportsToTransfer + feeCalculator.lamportsPerSignature)
-//       ); // fees only
-//       expect(balances.for(recipient)).to.equal(60 * lamportsToTransfer); // fees only
-//     });
-// });
